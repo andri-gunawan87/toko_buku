@@ -1,30 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Toko_Buku.Models;
+using Toko_Buku.Services;
+using System;
+using System.IO;
 
 namespace Toko_Buku.Controllers
 {
     public class HomeController : Controller
     {
-        List<databuku> _listBuku = new List<databuku>();
-        private readonly ILogger<HomeController> _logger;
+        List<DataBukuViewModel> _listBuku = new List<DataBukuViewModel>();
+        private readonly IDataBukuService _dataBukuService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IDataBukuService dataBuku)
         {
-            _logger = logger;
-            _listBuku = new List<databuku>() { 
-                new databuku("Cara Memasak", 10000), 
-                new databuku("Cara Membuat Rumah", 12000),
-                new databuku("Easy Streaming", 22500),
-                new databuku("Google Analytic", 17200)
-                };
-
+            _dataBukuService = dataBuku;
         }
 
         public IActionResult Index()
         {
-            Console.WriteLine(_listBuku.Count);
-            return View(_listBuku);
+            return View(_dataBukuService.GetDataBukus());
         }
 
         public IActionResult Add_Book()
@@ -33,14 +28,16 @@ namespace Toko_Buku.Controllers
         }
 
         [HttpPost]
-        public IActionResult Added(string judul, int harga)
+        public IActionResult Added(int id, string judul, int harga, string user)
         {
-            //_listBuku.Add(new databuku(judul, harga));
-            //databuku dataBaru = new databuku(judul, harga);
-            //_listBuku.Add(dataBaru);
-            _listBuku.Add(new databuku(judul, harga));
+            //using (StreamWriter writer = new StreamWriter("database.txt", true))
+            //{
+            //        writer.Write("\n{0}, {1}, {2}, {3}", id, judul, harga, user);
+            //}
 
-            return View(_listBuku);
+            DataBuku dataBaru = new DataBuku(id, judul, harga, user);
+            _dataBukuService.AddData(dataBaru);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

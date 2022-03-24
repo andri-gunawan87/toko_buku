@@ -1,0 +1,4 @@
+1, Cara Memasak, 10000, andri
+2, Cara Membuat Rumah, 12000, andri
+3, Easy Streaming, 22500, andri
+4, Google Analytic, 17200, andri

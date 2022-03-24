@@ -462,3 +462,10 @@ D:\aa\.net-practice\netproject\Toko Buku\obj\Debug\net6.0\refint\Toko Buku.dll
 D:\aa\.net-practice\netproject\Toko Buku\obj\Debug\net6.0\Toko Buku.pdb
 D:\aa\.net-practice\netproject\Toko Buku\obj\Debug\net6.0\Toko Buku.genruntimeconfig.cache
 D:\aa\.net-practice\netproject\Toko Buku\obj\Debug\net6.0\ref\Toko Buku.dll
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\Grpc.Core.dll
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\Grpc.Core.Api.dll
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+D:\aa\.net-practice\netproject\Toko Buku\bin\Debug\net6.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll

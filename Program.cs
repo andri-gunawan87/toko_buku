@@ -1,7 +1,10 @@
+using Toko_Buku.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IDataBukuService, DataBukuService>();
 
 var app = builder.Build();
 
