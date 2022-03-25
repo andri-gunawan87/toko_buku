@@ -1,48 +1,86 @@
 ﻿@model Toko_Buku.Models.DataBuku
 
 @{
-    ViewData["Title"] = "Add_Book";
+    ViewData["Title"] = "Tambah Buku";
+    Layout = "_General";
 }
 
-<h1>Add_Book</h1>
-
-<h4>databuku</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Added">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <div class="align-content-center">
+                <h4 class="">Detail Buku</h4>
             </div>
-            <div class="form-group">
-                <label asp-for="Judul" class="control-label"></label>
-                <input asp-for="Judul" class="form-control" />
-                <span asp-validation-for="Judul" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Harga" class="control-label"></label>
-                <input asp-for="Harga" class="form-control" />
-                <span asp-validation-for="Harga" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User" class="control-label"></label>
-                <input asp-for="User" class="form-control" />
-                <span asp-validation-for="User" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            <form asp-action="Added">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group checkout__input">
+                                    <p><label asp-for="Id" class="control-label"></label><span>*</span></p>
+                                    <input asp-for="Id" class="form-control" />
+                                    <span asp-validation-for="Id" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group checkout__input">
+                                    <p><label asp-for="User" class="control-label"></label><span>*</span></p>
+                                    <input asp-for="User" class="form-control" />
+                                    <span asp-validation-for="User" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group checkout__input">
+                            <p><label asp-for="Judul" class="control-label"></label><span>*</span></p>
+                            <input asp-for="Judul" class="form-control" />
+                            <span asp-validation-for="Judul" class="text-danger"></span>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Deskripsi<span>*</span></p>
+                            <input type="text" placeholder="Street Address" class="checkout__input__add">
+                        </div>
+                        <div class="checkout__input">
+                            <p>ISBN<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="form-group checkout__input">
+                            <p><label asp-for="Harga" class="control-label"></label><span>*</span></p>
+                            <input asp-for="Harga" class="form-control" />
+                            <span asp-validation-for="Harga" class="text-danger"></span>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Komentar<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Diskon<span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input__checkbox">
+                                    <p>Listed<span>*</span></p>
+                                    <label for="acc">
+                                        Langsung di Jual?
+                                        <input type="checkbox" id="acc">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="site-btn">PLACE ORDER</button>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+</section>
+<!-- Checkout Section End -->
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

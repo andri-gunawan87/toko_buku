@@ -3,3 +3,4 @@
 3, Easy Streaming, 22500, andri
 4, Google Analytic, 17200, andri
 12, Membaca dan Menulis, 12300, andri
+3, Latop Murah, 12450, andri

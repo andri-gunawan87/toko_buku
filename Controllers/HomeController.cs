@@ -9,7 +9,6 @@ namespace Toko_Buku.Controllers
 {
     public class HomeController : Controller
     {
-        List<DataBukuViewModel> _listBuku = new List<DataBukuViewModel>();
         private readonly IDataBukuService _dataBukuService;
 
         public HomeController(IDataBukuService dataBuku)
@@ -17,9 +16,11 @@ namespace Toko_Buku.Controllers
             _dataBukuService = dataBuku;
         }
 
-        public IActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(_dataBukuService.GetDataBukus());
+            var data = await _dataBukuService.ReadViewModel();
+            //return View(_dataBukuService.GetDataBukus());
+            return View(data);
         }
 
         public IActionResult Add_Book()
@@ -36,8 +37,14 @@ namespace Toko_Buku.Controllers
             //}
 
             DataBuku dataBaru = new DataBuku(id, judul, harga, user);
-            _dataBukuService.AddData(dataBaru);
+            // _dataBukuService.AddData(dataBaru);
+            _dataBukuService.Write(dataBaru);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Detail(int id)
+        {
+            return View();
         }
 
         public IActionResult Privacy()

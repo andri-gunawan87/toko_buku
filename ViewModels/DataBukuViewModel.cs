@@ -5,11 +5,13 @@ namespace Toko_Buku.Models
 {
     public class DataBukuViewModel
     {
+        public int Id { get; set; }
         public string Judul { get; set; }
         public int Harga { get; set; }
 
-        public DataBukuViewModel(string judul, int harga)
+        public DataBukuViewModel(int id, string judul, int harga)
         {
+            Id = id;
             Judul = judul;
             Harga = harga;
         }
